@@ -29,7 +29,7 @@ public class AddressBookImplementationTests {
     @Test
     public void givenPersonDetails_ifSuccessfullyEdited_returnTrue() {
         Person person =new Person("zafar","Xfr","8087241183","mmb","Mh",100070);
-        Assert.assertTrue(actionOnPerson.editPerson("zafar"));
+        Assert.assertTrue(actionOnPerson.editPerson("zafar","XfR"));
     }
 
 

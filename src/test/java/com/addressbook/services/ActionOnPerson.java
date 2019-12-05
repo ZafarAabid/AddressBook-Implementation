@@ -21,7 +21,7 @@ public class ActionOnPerson implements PersonsBehavior {
     }
 
     @Override
-    public boolean editPerson(String personName) {
+    public boolean editPerson(String firstName,String lastName) {
         ArrayList<Person> personList = null;
         boolean flagForDataFound=false;
 
@@ -29,7 +29,7 @@ public class ActionOnPerson implements PersonsBehavior {
         Iterator personListIterator = personList.iterator();
         while (personListIterator.hasNext()) {
             Person person = (Person) personListIterator.next();
-            if (person.getFirstName().equals(personName)) {
+            if ((person.getFirstName().equalsIgnoreCase(firstName))&&(person.getLastName().equalsIgnoreCase(lastName))) {
                 flagForDataFound=true;
                 person.setPhNo("123456789");
                 person.setCity("aaa");
