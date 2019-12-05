@@ -18,20 +18,19 @@ public class Person implements Comparable<Person> {
         this.zipCode = zipCode;
     }
 
+    public Person(String phNo, String city, String state, Integer zipCode) {
+        this.phNo = phNo;
+        this.city = city;
+        this.state = state;
+        this.zipCode = zipCode;
+    }
+
     public String getFirstName() {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
     public String getLastName() {
         return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
     }
 
     public String getPhNo() {

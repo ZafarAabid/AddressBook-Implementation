@@ -18,21 +18,21 @@ public class ActionOnBook implements BookBehavior{
     @Override
     public ArrayList readBook() {
         try {
-
-         //   mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
             InputStream fileInputStream = new FileInputStream(new File("/home/user/workspace/AddressBookImplementation/src/test/java/AddressBook.json"));
             TypeReference<List<Person>> typeReference = new TypeReference<List<Person>>() {};
             ArrayList<Person> persons= mapper.readValue(fileInputStream,typeReference);
-
             return persons;
         } catch (FileNotFoundException e) {
+            System.out.println("EXCEPTION:"+e.getMessage());
             e.printStackTrace();
         } catch (JsonParseException e) {
+            System.out.println("EXCEPTION:"+e.getMessage());
             e.printStackTrace();
         } catch (JsonMappingException e) {
             e.printStackTrace();
             System.out.println("EXCEPTION:"+e.getMessage());
         } catch (IOException e) {
+            System.out.println("EXCEPTION:"+e.getMessage());
             e.printStackTrace();
         }
         return null;
@@ -47,5 +47,16 @@ public class ActionOnBook implements BookBehavior{
             System.out.println("EXCEPTION:"+e.getMessage());
         }
     }
+    @Override
+    public ArrayList openBook() {
+        return null;
+    }
+    @Override
+    public void printAddressBookList() {
 
+    }
+    @Override
+    public void printAddressBook() {
+
+    }
 }

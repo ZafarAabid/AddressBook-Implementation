@@ -1,4 +1,0 @@
-dPerson{firstName='Ikram', lastName='Ik', phNo='8087241183', city='mmb', state='Mh', zipCode=100070}
-dPerson{firstName='zafar', lastName='Xfr', phNo='123456789', city='aaa', state='zzz', zipCode=11111}
-ePerson{firstName='jafar', lastName='Xfr', phNo='8087241183', city='mmb', state='Mh', zipCode=100070}
-ePerson{firstName='zafar', lastName='Xfr', phNo='8087241183', city='mmb', state='Mh', zipCode=100070}
