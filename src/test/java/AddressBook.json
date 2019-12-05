@@ -1,19 +1,19 @@
 [ {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "8087241183",
+  "firstName" : "Ikram",
+  "lastName" : "Ik",
+  "phNo" : "8527531590",
   "city" : "mmb",
   "state" : "Mh",
   "zipCode" : 100070
 }, {
   "firstName" : "zafar",
   "lastName" : "Xfr",
-  "phNo" : "8087241183",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 100070
+  "phNo" : "123456789",
+  "city" : "aaa",
+  "state" : "zzz",
+  "zipCode" : 11111
 }, {
-  "firstName" : "zafar",
+  "firstName" : "jafar",
   "lastName" : "Xfr",
   "phNo" : "8087241183",
   "city" : "mmb",

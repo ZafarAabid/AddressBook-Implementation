@@ -1,16 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.addressbook.test.AddressBookImplementationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-05T09:46:27" hostname="FH400" time="0.121">
+<testsuite name="com.addressbook.test.AddressBookImplementationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-05T10:23:17" hostname="FH400" time="0.102">
   <properties/>
-  <testcase name="addPerson_if" classname="com.addressbook.test.AddressBookImplementationTests" time="0.121"/>
-  <system-out><![CDATA[zafar,Xfr,8087241183,mmb,Mh,100070
-
-zafar,Xfr,8087241183,mmb,Mh,100070
-
-zafar,Xfr,8087241183,mmb,Mh,100070
-
-zafar
-zafar
-zafar
+  <testcase name="givenPersonDetails_ifSuccessfullyAdded_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.102"/>
+  <system-out><![CDATA[Person{firstName='Ikram', lastName='Ik', phNo='8087241183', city='mmb', state='Mh', zipCode=100070}
+Person{firstName='zafar', lastName='Xfr', phNo='123456789', city='aaa', state='zzz', zipCode=11111}
+Person{firstName='jafar', lastName='Xfr', phNo='8087241183', city='mmb', state='Mh', zipCode=100070}
+Person{firstName='zafar', lastName='Xfr', phNo='8087241183', city='mmb', state='Mh', zipCode=100070}
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

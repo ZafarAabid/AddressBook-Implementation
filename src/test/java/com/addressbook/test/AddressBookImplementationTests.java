@@ -19,13 +19,19 @@ public class AddressBookImplementationTests {
     @Test
     public void givenPersonDetails_ifSuccessfullyAdded_returnTrue() {
         Person person =new Person("zafar","Xfr","8087241183","mmb","Mh",100070);
-        ArrayList list=actionOnPerson.addPerson(person);
+        ArrayList<Person> list=actionOnPerson.addPerson(person);
         Iterator iterator=list.iterator();
-        while (iterator.hasNext())
-        {
-            Person person1= (Person) iterator.next();
-            System.out.println(person1.getFirstName());
+        for (Person persons:list) {
+            System.out.println(persons.toString());
+        }
         }
 
-        }
+    @Test
+    public void givenPersonDetails_ifSuccessfullyEdited_returnTrue() {
+        Person person =new Person("zafar","Xfr","8087241183","mmb","Mh",100070);
+        Assert.assertTrue(actionOnPerson.editPerson("zafar"));
+    }
+
+
+
     }

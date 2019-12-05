@@ -8,7 +8,7 @@ public interface PersonsBehavior {
 
     public ArrayList addPerson(Person person);
 
-    public ArrayList editPerson(String personName);
+    public boolean editPerson(String personName);
 
     public ArrayList deletePerson(String personName);
 
