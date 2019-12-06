@@ -82,12 +82,8 @@ public class ActionOnPerson implements PersonsBehavior {
     }
     @Override
     public void printEntries() {
-        ArrayList<Person> list = actionOnBook.readBook();
-        Iterator printlistIterator = list.iterator();
-        while (printlistIterator.hasNext()){
-            Person person = (Person) printlistIterator.next();
-            System.out.println(person.toString());
+        actionOnBook.printAddressBook();
         }
     }
-}
+
 
