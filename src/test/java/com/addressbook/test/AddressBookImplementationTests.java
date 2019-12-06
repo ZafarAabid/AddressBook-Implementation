@@ -6,6 +6,7 @@ import com.addressbook.services.ActionOnPerson;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -76,6 +77,15 @@ public class AddressBookImplementationTests {
     public void givenPersonDetails_PrintEntries() {
         actionOnPerson.printEntries();
     }
+
+    @Test
+    public void givenFileName_ifExist_writeOnIt_elseCreateNewFile() throws IOException {
+
+         String str=actionOnBook.checkFileAvailability("newAddressBook");
+        Assert.assertTrue(new File(str).exists());
+    }
+
+
 
 
 }
