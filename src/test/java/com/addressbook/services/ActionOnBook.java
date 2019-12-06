@@ -3,7 +3,6 @@ package com.addressbook.services;
 import com.addressbook.model.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
-
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -55,6 +54,7 @@ public class ActionOnBook implements BookBehavior {
         }
     }
 
+
     @Override
     public void printAddressBook() {
         List<Person> list = actionOnBook.readBook();
@@ -98,4 +98,16 @@ public class ActionOnBook implements BookBehavior {
         return list;
     }
 
+
+
+    public Boolean saveAndSaveAs(String oldName, String newName) throws IOException {
+        File oldFile = new File("/home/user/workspace/AddressBookImplementation/src/books/" + oldName + ".json");
+        if (oldFile.exists()) {
+            File newFile = new File("/home/user/workspace/AddressBookImplementation/src/books/" + newName + ".json");
+            oldFile.renameTo(newFile);
+        }
+        if (new File("/home/user/workspace/AddressBookImplementation/src/books/" + newName + ".json").exists())
+        return true;
+        else return false;
+    }
 }
