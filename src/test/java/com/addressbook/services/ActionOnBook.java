@@ -1,10 +1,6 @@
 package com.addressbook.services;
 
 import com.addressbook.model.Person;
-import com.fasterxml.jackson.core.JsonParseException;
-import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 
@@ -15,44 +11,42 @@ import java.util.List;
 
 public class ActionOnBook implements BookBehavior {
 
+
+
     public ActionOnBook() {
     }
 
     public ActionOnBook(String path) {
-        this.path = path;
+        this.lastopenedFilepath = path;
     }
 
-    String path = "/home/user/workspace/AddressBookImplementation/src/books/AddressBook.json";
+    String lastopenedFilepath = "/home/user/workspace/AddressBookImplementation/src/books/AddressBook.json";
     static ObjectMapper mapper = new ObjectMapper();
     ActionOnBook actionOnBook;
 
 
     @Override
-    public ArrayList readBook() {
+    public List<Person> readBook() {
         try {
+            List<Person> personList = new ArrayList<>();
+            Gson gson = new Gson();
+            BufferedReader bufferedReader = new BufferedReader(new FileReader(lastopenedFilepath));
+            Person[] peoples = gson.fromJson(bufferedReader, Person[].class);
+            for (int i = 0; i < peoples.length; i++) {
+                personList.add(peoples[i]);
 
-            InputStream fileInputStream = new FileInputStream(new File(path));
-            TypeReference<List<Person>> typeReference = new TypeReference<List<Person>>() {
-            };
-            ArrayList<Person> persons = mapper.readValue(fileInputStream, typeReference);
-            return persons;
+
+            }
+            return personList;
         } catch (FileNotFoundException e) {
             System.out.println("EXCEPTION:" + e.getMessage());
-            e.printStackTrace();
-        } catch (JsonParseException e) {
-            System.out.println("EXCEPTION:" + e.getMessage());
-            e.printStackTrace();
-        } catch (JsonMappingException e) {
-            e.printStackTrace();
-            System.out.println("EXCEPTION:" + e.getMessage());
-        } catch (IOException e) {
             e.printStackTrace();
         }
         return null;
     }
 
     @Override
-    public void writeOnBook(ArrayList list) {
+    public void writeOnBook(List<Person> list) {
         File file = new File("/home/user/workspace/AddressBookImplementation/src/books/AddressBook.json");
         try {
             mapper.writerWithDefaultPrettyPrinter().writeValue(file, list);
@@ -62,18 +56,8 @@ public class ActionOnBook implements BookBehavior {
     }
 
     @Override
-    public ArrayList openBook() {
-        return null;
-    }
-
-    @Override
-    public void printAddressBookList() {
-
-    }
-
-    @Override
     public void printAddressBook() {
-        ArrayList<Person> list = actionOnBook.readBook();
+        List<Person> list = actionOnBook.readBook();
         Iterator printlistIterator = list.iterator();
         while (printlistIterator.hasNext()) {
             Person person = (Person) printlistIterator.next();
@@ -82,7 +66,7 @@ public class ActionOnBook implements BookBehavior {
     }
 
     @Override
-    public String checkFileAvailability(String fileName) {
+    public String createAdressBook(String fileName) {
         String path = "/home/user/workspace/AddressBookImplementation/src/books/" + fileName + ".json";
         if (new File(path).exists()) {
             return path;
@@ -101,4 +85,17 @@ public class ActionOnBook implements BookBehavior {
         }
         return path;
     }
+
+
+    @Override
+    public List<Person> openBook(String fileName) {
+
+        List<Person> list = new ArrayList();
+        if (new File("/home/user/workspace/AddressBookImplementation/src/books/" + fileName).exists()) {
+            lastopenedFilepath = "/home/user/workspace/AddressBookImplementation/src/books/" +fileName;
+        }
+         list = actionOnBook.readBook();
+        return list;
+    }
+
 }

@@ -1,20 +1,19 @@
+
 package com.addressbook.services;
 
-import java.io.File;
-import java.util.ArrayList;
+import com.addressbook.model.Person;
+
 import java.util.List;
 
 public interface BookBehavior {
 
-    public List readBook( );
+    public List<Person> readBook( );
 
-    public void writeOnBook(ArrayList list);
+    public void writeOnBook( List<Person> list);
 
-    public List openBook();
-
-    public void printAddressBookList();
+    public List<Person> openBook(String filename);
 
     public void printAddressBook();
 
-     public String checkFileAvailability(String fileName);
+    public String createAdressBook(String fileName);
 }

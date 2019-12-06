@@ -6,17 +6,31 @@
   "state" : "Mh",
   "zipCode" : 504563
 }, {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "11111",
-  "city" : "nshk",
-  "state" : "mh",
-  "zipCode" : 123456
-}, {
   "firstName" : "jafar",
   "lastName" : "aabid",
   "phNo" : "11111",
   "city" : "pune",
   "state" : "mh",
   "zipCode" : 789456
+}, {
+  "firstName" : "zafar",
+  "lastName" : "Xfr",
+  "phNo" : "11111",
+  "city" : "newCity",
+  "state" : "newState",
+  "zipCode" : 0
+}, {
+  "firstName" : "zafar",
+  "lastName" : "Xfr",
+  "phNo" : "8087241183",
+  "city" : "mmb",
+  "state" : "Mh",
+  "zipCode" : 100070
+}, {
+  "firstName" : "zafar",
+  "lastName" : "Xfr",
+  "phNo" : "8087241183",
+  "city" : "mmb",
+  "state" : "Mh",
+  "zipCode" : 100070
 } ]
