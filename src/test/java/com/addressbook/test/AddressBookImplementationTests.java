@@ -72,6 +72,10 @@ public class AddressBookImplementationTests {
 
     }
 
+    @Test
+    public void givenPersonDetails_PrintEntries() {
+        actionOnPerson.printEntries();
+    }
 
 
 }
