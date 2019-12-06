@@ -13,8 +13,8 @@ public class ActionOnPerson implements PersonsBehavior {
     ActionOnBook actionOnBook = new ActionOnBook();
 
     @Override
-    public ArrayList addPerson(Person person) {
-        ArrayList<Person> personList = actionOnBook.readBook();
+    public  List<Person> addPerson(Person person) {
+        List<Person> personList = actionOnBook.readBook();
         personList.add(person);
         actionOnBook.writeOnBook(personList);
         return personList;
@@ -22,7 +22,7 @@ public class ActionOnPerson implements PersonsBehavior {
 
     @Override
     public boolean editPerson(String firstName, String lastName, Person newDetails) {
-        ArrayList<Person> personList = null;
+        List<Person> personList = null;
         boolean flagForDataFound = false;
 
         personList = actionOnBook.readBook();
@@ -46,8 +46,8 @@ public class ActionOnPerson implements PersonsBehavior {
     @Override
     public boolean deletePerson(String PhoneNumber) {
 
-        ArrayList<Person> personList = null;
-        ArrayList<Person> newList = new ArrayList<>();
+        List<Person> personList = null;
+        List<Person> newList = new ArrayList<>();
 
         boolean flagForDataFound = false;
         personList = actionOnBook.readBook();
@@ -56,7 +56,7 @@ public class ActionOnPerson implements PersonsBehavior {
             Person person = (Person) personListIterator.next();
             if (!person.getPhNo().equals(PhoneNumber)) {
                 newList.add(person);
-                    }
+            }
             else if (person.getPhNo().equals(PhoneNumber)) {
                 flagForDataFound = true;
             }
@@ -66,16 +66,16 @@ public class ActionOnPerson implements PersonsBehavior {
     }
 
     @Override
-    public ArrayList sortByName() {
-        ArrayList<Person> personList = null;
+    public  List<Person> sortByName() {
+        List<Person> personList = null;
         personList = actionOnBook.readBook();
         personList.sort((s1, s2) -> s1.getLastName().toLowerCase().compareTo(s2.getLastName().toLowerCase()));
         return personList;
-}
+    }
 
     @Override
-    public ArrayList sortByZipCode() {
-        ArrayList<Person> personList = null;
+    public  List<Person> sortByZipCode() {
+        List<Person> personList = null;
         personList = actionOnBook.readBook();
         personList.sort((s1, s2) -> s1.getZipCode().compareTo(s2.getZipCode()));
         return personList;
@@ -83,7 +83,6 @@ public class ActionOnPerson implements PersonsBehavior {
     @Override
     public void printEntries() {
         actionOnBook.printAddressBook();
-        }
     }
-
+}
 
