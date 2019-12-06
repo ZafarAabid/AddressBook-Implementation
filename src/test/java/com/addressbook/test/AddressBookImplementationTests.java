@@ -101,5 +101,8 @@ public class AddressBookImplementationTests {
 
     }
 
-
+    @Test
+    public void useSaveAs_IfFilenameSuccessfullychanged_returnTrue() throws IOException {
+        Assert.assertTrue(actionOnBook.saveAndSaveAs("newAddressBook","newOne"));
+    }
 }
