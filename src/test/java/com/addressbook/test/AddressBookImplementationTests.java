@@ -62,6 +62,20 @@ public class AddressBookImplementationTests {
 
     }
 
+    @Test
+    public void givenPersonDetails_sortByZipCode() {
+        ArrayList<Person> list =actionOnPerson.sortByZipCode();
+        Iterator iterator=list.iterator();
+        for (Person persons:list) {
+            System.out.println(persons.toString());
+        }
+
+    }
+
+    @Test
+    public void givenPersonDetails_PrintEntries() {
+        actionOnPerson.printEntries();
+    }
 
 
 }
