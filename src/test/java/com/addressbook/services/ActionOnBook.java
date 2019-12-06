@@ -14,11 +14,17 @@ import java.util.List;
 
 public class ActionOnBook implements BookBehavior{
 
+    public ActionOnBook() {}
+    public ActionOnBook(String path) {this.path = path; }
+
+    String path = "/home/user/workspace/AddressBookImplementation/src/test/java/AddressBook.json";
     static ObjectMapper mapper= new ObjectMapper();
+
     @Override
     public ArrayList readBook() {
         try {
-            InputStream fileInputStream = new FileInputStream(new File("/home/user/workspace/AddressBookImplementation/src/test/java/AddressBook.json"));
+
+            InputStream fileInputStream = new FileInputStream(new File(path));
             TypeReference<List<Person>> typeReference = new TypeReference<List<Person>>() {};
             ArrayList<Person> persons= mapper.readValue(fileInputStream,typeReference);
             return persons;
@@ -32,7 +38,6 @@ public class ActionOnBook implements BookBehavior{
             e.printStackTrace();
             System.out.println("EXCEPTION:"+e.getMessage());
         } catch (IOException e) {
-            System.out.println("EXCEPTION:"+e.getMessage());
             e.printStackTrace();
         }
         return null;

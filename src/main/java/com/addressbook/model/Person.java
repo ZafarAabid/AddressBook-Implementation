@@ -67,17 +67,18 @@ public class Person implements Comparable<Person> {
 
     @Override
     public int compareTo(Person person) {
-        return this.getLastName().compareTo(person.getLastName());
+        return this.getZipCode().compareTo(person.getZipCode());
     }
+
 
     @Override
     public String toString() {
         return "Person{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phNo='" + phNo + '\'' +
-                ", city='" + city + '\'' +
-                ", state='" + state + '\'' +
+                "firstName=" + firstName + "\t\t" +
+                ", lastName=" + lastName + "\t\t" +
+                ", phNo=" + phNo + "\t\t" +
+                ", city=" + city + "\t\t" +
+                ", state=" + state + "\t\t" +
                 ", zipCode=" + zipCode +
                 '}';
     }

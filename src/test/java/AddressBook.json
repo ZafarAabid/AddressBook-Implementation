@@ -4,33 +4,19 @@
   "phNo" : "8527531590",
   "city" : "mmb",
   "state" : "Mh",
-  "zipCode" : 100070
+  "zipCode" : 504563
 }, {
   "firstName" : "zafar",
   "lastName" : "Xfr",
-  "phNo" : "08087241183",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 100070
+  "phNo" : "11111",
+  "city" : "nshk",
+  "state" : "mh",
+  "zipCode" : 123456
 }, {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "8087241183",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 100070
-}, {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "8087241183",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 100070
-}, {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "8087241183",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 100070
+  "firstName" : "jafar",
+  "lastName" : "aabid",
+  "phNo" : "11111",
+  "city" : "pune",
+  "state" : "mh",
+  "zipCode" : 789456
 } ]

@@ -13,7 +13,7 @@ public class AddressBookImplementationTests {
     ActionOnPerson actionOnPerson =new ActionOnPerson();
     ActionOnBook actionOnBook = new ActionOnBook();
     @Test
-    public void whileCreatingContact() {
+    public void whileCreatingContact_ifSuccessfullyCreated_returnTrue() {
         Person person = new Person("zafar","Xfr","8087241183","mmb","Mh",100070);
         Assert.assertEquals("zafar",person.getFirstName());
     }
@@ -52,5 +52,26 @@ public class AddressBookImplementationTests {
     }
 
 
+    @Test
+    public void givenPersonDetails_sortByLastName() {
+        ArrayList<Person> list =actionOnPerson.sortByName();
+        Iterator iterator=list.iterator();
+        for (Person persons:list) {
+            System.out.println(persons.toString());
+        }
 
     }
+
+    @Test
+    public void givenPersonDetails_sortByZipCode() {
+        ArrayList<Person> list =actionOnPerson.sortByZipCode();
+        Iterator iterator=list.iterator();
+        for (Person persons:list) {
+            System.out.println(persons.toString());
+        }
+
+    }
+
+
+
+}
