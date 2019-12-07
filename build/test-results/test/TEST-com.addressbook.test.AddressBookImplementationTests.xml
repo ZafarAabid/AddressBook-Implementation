@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.addressbook.test.AddressBookImplementationTests" tests="1" skipped="0" failures="0" errors="0" timestamp="2019-12-06T12:32:21" hostname="FH400" time="0.004">
+<testsuite name="com.addressbook.test.AddressBookImplementationTests" tests="11" skipped="0" failures="0" errors="0" timestamp="2019-12-07T13:29:36" hostname="FH400" time="0.196">
   <properties/>
-  <testcase name="useSaveAs_IfFilenameSuccessfullychanged_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.004"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="whileCreatingContact_ifSuccessfullyCreated_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.001"/>
+  <testcase name="givenPersonDetails_ifSuccessfullyAdded_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.11"/>
+  <testcase name="OpenBookByPassingFileName_ifImproper_throwsException" classname="com.addressbook.test.AddressBookImplementationTests" time="0.001"/>
+  <testcase name="givenPersonDetails_ifSuccessfullyAdd_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.022"/>
+  <testcase name="givenPersonDetails_sortByLastName" classname="com.addressbook.test.AddressBookImplementationTests" time="0.007"/>
+  <testcase name="OpenBookByPassingFileName_IfWrong_ThrowsException" classname="com.addressbook.test.AddressBookImplementationTests" time="0.013"/>
+  <testcase name="givenPersonDetails_ifSuccessfullyDeleted_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.011"/>
+  <testcase name="givenPersonDetails_ifSuccessfullyEdited_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.01"/>
+  <testcase name="givenPersonDetails_sortByZipCode" classname="com.addressbook.test.AddressBookImplementationTests" time="0.007"/>
+  <testcase name="useSaveAs_IfFilenameSuccessfullychanged_returnTrue" classname="com.addressbook.test.AddressBookImplementationTests" time="0.001"/>
+  <testcase name="givenFileName_ifExist_writeOnIt_elseCreateNewFile" classname="com.addressbook.test.AddressBookImplementationTests" time="0.003"/>
+  <system-out><![CDATA[Person{firstName=Ikram		, lastName=Ik		, phNo=8527531590		, city=mmb		, state=Mh		, zipCode=504563}
+Person{firstName=jafar		, lastName=aabid		, phNo=11111		, city=pune		, state=mh		, zipCode=789456}
+Person{firstName=zafar		, lastName=Xfr		, phNo=11111		, city=newCity		, state=newState		, zipCode=111111}
+Person{firstName=zafar		, lastName=Xfr		, phNo=8087241183		, city=mmb		, state=Mh		, zipCode=100070}
+Person{firstName=zafar		, lastName=Xfr		, phNo=8087241183		, city=mmb		, state=Mh		, zipCode=100070}
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
