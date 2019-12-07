@@ -13,7 +13,7 @@ public class ActionOnPerson implements PersonsBehavior {
     ActionOnBook actionOnBook = new ActionOnBook();
 
     @Override
-    public  List<Person> addPerson(Person person) {
+    public List<Person> addPerson(Person person) throws AddressBookIssuesException {
         List<Person> personList = actionOnBook.readBook();
         personList.add(person);
         actionOnBook.writeOnBook(personList);
@@ -21,7 +21,7 @@ public class ActionOnPerson implements PersonsBehavior {
     }
 
     @Override
-    public boolean editPerson(String firstName, String lastName, Person newDetails) {
+    public boolean editPerson(String firstName, String lastName, Person newDetails) throws AddressBookIssuesException {
         List<Person> personList = null;
         boolean flagForDataFound = false;
 
@@ -44,7 +44,7 @@ public class ActionOnPerson implements PersonsBehavior {
     }
 
     @Override
-    public boolean deletePerson(String PhoneNumber) {
+    public boolean deletePerson(String PhoneNumber) throws AddressBookIssuesException {
 
         List<Person> personList = null;
         List<Person> newList = new ArrayList<>();
@@ -56,8 +56,7 @@ public class ActionOnPerson implements PersonsBehavior {
             Person person = (Person) personListIterator.next();
             if (!person.getPhNo().equals(PhoneNumber)) {
                 newList.add(person);
-            }
-            else if (person.getPhNo().equals(PhoneNumber)) {
+            } else if (person.getPhNo().equals(PhoneNumber)) {
                 flagForDataFound = true;
             }
         }
@@ -66,7 +65,7 @@ public class ActionOnPerson implements PersonsBehavior {
     }
 
     @Override
-    public  List<Person> sortByName() {
+    public List<Person> sortByName() throws AddressBookIssuesException {
         List<Person> personList = null;
         personList = actionOnBook.readBook();
         personList.sort((s1, s2) -> s1.getLastName().toLowerCase().compareTo(s2.getLastName().toLowerCase()));
@@ -74,14 +73,15 @@ public class ActionOnPerson implements PersonsBehavior {
     }
 
     @Override
-    public  List<Person> sortByZipCode() {
+    public List<Person> sortByZipCode() throws AddressBookIssuesException {
         List<Person> personList = null;
         personList = actionOnBook.readBook();
         personList.sort((s1, s2) -> s1.getZipCode().compareTo(s2.getZipCode()));
         return personList;
     }
+
     @Override
-    public void printEntries() {
+    public void printEntries() throws AddressBookIssuesException {
         actionOnBook.printAddressBook();
     }
 }

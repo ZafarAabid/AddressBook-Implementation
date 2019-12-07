@@ -7,13 +7,13 @@ import java.util.List;
 
 public interface BookBehavior {
 
-    public List<Person> readBook( );
+    public List<Person> readBook( ) throws AddressBookIssuesException;
 
-    public void writeOnBook( List<Person> list);
+    public void writeOnBook( List<Person> list) throws AddressBookIssuesException;
 
-    public List<Person> openBook(String filename);
+    public List<Person> openBook(String filename) throws AddressBookIssuesException;
 
-    public void printAddressBook();
+    public void printAddressBook() throws AddressBookIssuesException;
 
-    public String createAdressBook(String fileName);
+    public String createAdressBook(String fileName) throws AddressBookIssuesException;
 }

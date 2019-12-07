@@ -1,36 +1,26 @@
-[ {
-  "firstName" : "Ikram",
-  "lastName" : "Ik",
-  "phNo" : "8527531590",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 504563
-}, {
-  "firstName" : "jafar",
-  "lastName" : "aabid",
-  "phNo" : "11111",
-  "city" : "pune",
-  "state" : "mh",
-  "zipCode" : 789456
-}, {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "11111",
-  "city" : "newCity",
-  "state" : "newState",
-  "zipCode" : 0
-}, {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "8087241183",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 100070
-}, {
-  "firstName" : "zafar",
-  "lastName" : "Xfr",
-  "phNo" : "8087241183",
-  "city" : "mmb",
-  "state" : "Mh",
-  "zipCode" : 100070
-} ]
+[
+  {
+    "firstName": "Ikram",
+    "lastName": "Ik",
+    "phNo": "8527531590",
+    "city": "mmb",
+    "state": "Mh",
+    "zipCode": 504563
+  },
+  {
+    "firstName": "jafar",
+    "lastName": "aabid",
+    "phNo": "11111",
+    "city": "pune",
+    "state": "mh",
+    "zipCode": 789456
+  },
+  {
+    "firstName": "zafar",
+    "lastName": "Xfr",
+    "phNo": "11111",
+    "city": "newCity",
+    "state": "newState",
+    "zipCode": 111111
+  }
+]

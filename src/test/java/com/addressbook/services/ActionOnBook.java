@@ -3,13 +3,13 @@ package com.addressbook.services;
 import com.addressbook.model.Person;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
+
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 public class ActionOnBook implements BookBehavior {
-
 
 
     public ActionOnBook() {
@@ -19,13 +19,11 @@ public class ActionOnBook implements BookBehavior {
         this.lastopenedFilepath = path;
     }
 
-    String lastopenedFilepath = "/home/user/workspace/AddressBookImplementation/src/books/AddressBook.json";
+    static String lastopenedFilepath = "/home/user/workspace/AddressBookImplementation/src/books/AddressBook.json";
     static ObjectMapper mapper = new ObjectMapper();
-    ActionOnBook actionOnBook;
-
 
     @Override
-    public List<Person> readBook() {
+    public List<Person> readBook() throws AddressBookIssuesException {
         try {
             List<Person> personList = new ArrayList<>();
             Gson gson = new Gson();
@@ -33,31 +31,27 @@ public class ActionOnBook implements BookBehavior {
             Person[] peoples = gson.fromJson(bufferedReader, Person[].class);
             for (int i = 0; i < peoples.length; i++) {
                 personList.add(peoples[i]);
-
-
             }
             return personList;
         } catch (FileNotFoundException e) {
-            System.out.println("EXCEPTION:" + e.getMessage());
-            e.printStackTrace();
+            throw new AddressBookIssuesException("Error while Writing into a file", AddressBookIssuesException.ExceptionType.NO_SUCH_FILE);
         }
-        return null;
     }
 
     @Override
-    public void writeOnBook(List<Person> list) {
+    public void writeOnBook(List<Person> list) throws AddressBookIssuesException {
         File file = new File("/home/user/workspace/AddressBookImplementation/src/books/AddressBook.json");
         try {
             mapper.writerWithDefaultPrettyPrinter().writeValue(file, list);
         } catch (IOException e) {
-            System.out.println("EXCEPTION:" + e.getMessage());
+            throw new AddressBookIssuesException("Error while Writing into a file", AddressBookIssuesException.ExceptionType.NO_SUCH_FILE);
         }
     }
 
 
     @Override
-    public void printAddressBook() {
-        List<Person> list = actionOnBook.readBook();
+    public void printAddressBook() throws AddressBookIssuesException {
+        List<Person> list = readBook();
         Iterator printlistIterator = list.iterator();
         while (printlistIterator.hasNext()) {
             Person person = (Person) printlistIterator.next();
@@ -66,7 +60,7 @@ public class ActionOnBook implements BookBehavior {
     }
 
     @Override
-    public String createAdressBook(String fileName) {
+    public String createAdressBook(String fileName) throws AddressBookIssuesException {
         String path = "/home/user/workspace/AddressBookImplementation/src/books/" + fileName + ".json";
         if (new File(path).exists()) {
             return path;
@@ -79,7 +73,7 @@ public class ActionOnBook implements BookBehavior {
                 writer.write("[]");
                 writer.flush();
             } catch (IOException e) {
-                e.printStackTrace();
+                throw new AddressBookIssuesException("Book name/path is improper OR issue with IO binding", AddressBookIssuesException.ExceptionType.NO_SUCH_FILE);
             }
 
         }
@@ -88,16 +82,15 @@ public class ActionOnBook implements BookBehavior {
 
 
     @Override
-    public List<Person> openBook(String fileName) {
+    public List<Person> openBook(String fileName) throws AddressBookIssuesException {
 
-        List<Person> list = new ArrayList();
+        List<Person> list = new ArrayList<>();
         if (new File("/home/user/workspace/AddressBookImplementation/src/books/" + fileName).exists()) {
-            lastopenedFilepath = "/home/user/workspace/AddressBookImplementation/src/books/" +fileName;
+            lastopenedFilepath = "/home/user/workspace/AddressBookImplementation/src/books/" + fileName;
         }
-         list = actionOnBook.readBook();
+        list = readBook();
         return list;
     }
-
 
 
     public Boolean saveAndSaveAs(String oldName, String newName) throws IOException {
@@ -107,7 +100,7 @@ public class ActionOnBook implements BookBehavior {
             oldFile.renameTo(newFile);
         }
         if (new File("/home/user/workspace/AddressBookImplementation/src/books/" + newName + ".json").exists())
-        return true;
+            return true;
         else return false;
     }
 }
